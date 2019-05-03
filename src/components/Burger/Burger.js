@@ -4,10 +4,8 @@ import Ingredient from "../Ingredients/Ingredients";
 
 const Burger = ({ingredients}) => {
     const ingredientComponents=[];
-    console.log(ingredients[0].count);
    for(const ingredient in ingredients){
        const iCount=ingredients[ingredient].count;
-       console.log(ingredients[ingredient].name);
        for(let i=0;i<iCount;i++){
         ingredientComponents.push(<Ingredient key={ingredients[ingredient].name+i} type={ingredients[ingredient].name}/>);
        }

@@ -1,0 +1,19 @@
+.menues{
+    margin: 0 auto;
+    text-align: center;
+    width: 330px;
+    border: 1px solid #bf3813;
+    padding: 10px;
+    box-sizing: border-box;
+}
+.menues::after{
+    content: '';
+    display: table;
+    clear: both;
+}
+span{
+    padding: 20px;
+}
+button{
+    margin: 0 5px;
+}

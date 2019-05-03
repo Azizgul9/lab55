@@ -1,15 +1,28 @@
 import React from 'react';
 
-const BurgerController = ({ingredients,count,add,remove}) => {
-    ingredients.map(ingredient=>{
-       return <div>
-           <img src={ingredients[ingredient].image} alt={ingredients[ingredient].name}/>
-           <span>{ingredients[ingredient].name}</span>
-           <span>{()=>count([ingredient])}</span>
-           <button onClick={()=>add([ingredient])}>ADD</button>
-           <button onClick={()=>remove([ingredient])}>DELETE</button>
-       </div>
-    });
+import './BurgerController.css';
+
+const BurgerController = ({ingredients,count,add,remove,price,disables}) => {
+    const menues = ingredients.map((ingredient, index) => (
+            <div key={ingredient.name + index} >
+                <div style={{float:'left'}}>
+                    <span>{ingredient.name}</span>
+                </div>
+                <div style={{float:'right'}}>
+                    <span>x{count(index)}</span>
+                    <button onClick={() => add(index)}>ADD</button>
+                    <button onClick={() => remove(index)} disabled={disables(index)}>DELETE</button>
+                </div>
+            </div>
+        )
+    );
+    return(
+        <div className={"menues"}>
+            <h3>Total Order Cost :{price}</h3>
+            {menues}
+        </div>
+    );
 };
 
 export default BurgerController;
+

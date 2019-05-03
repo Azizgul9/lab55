@@ -13,10 +13,10 @@ const INGREDIENTS=[
 class BurgerBuilder extends Component {
     state={
         ingredients:[
-            {name: 'Meat',count: 1},
-            {name: 'Cheese',count: 1},
-            {name: 'Bacon',count: 2},
-            {name: 'Salad',count: 2},
+            {name: 'Meat',count: 0},
+            {name: 'Cheese',count: 0},
+            {name: 'Bacon',count: 0},
+            {name: 'Salad',count: 0},
         ],
         totalPrice: 20
     };
@@ -28,7 +28,7 @@ class BurgerBuilder extends Component {
         count[index].count=newCount;
 
         const cost=this.state.totalPrice;
-        const newCost=cost+INGREDIENTS[index].price*newCount;
+        const newCost=cost+INGREDIENTS[index].price;
 
         this.setState({ingredients: count,totalPrice:newCost});
     };
@@ -40,17 +40,24 @@ class BurgerBuilder extends Component {
         count[index].count=newCount;
 
         const cost=this.state.totalPrice;
-        const newCost=cost+INGREDIENTS[index].price*newCount;
+        const newCost=cost-INGREDIENTS[index].price;
 
         this.setState({ingredients: count,totalPrice:newCost});
     };
 
     counter=(index)=>{
-        return this.state.ingredients[index].count;
+         return this.state.ingredients[index].count;
     };
 
-    render() {
+    disabled=(index)=>{
+         return this.state.ingredients[index].count===0;
+};
 
+    render() {
+        // let disables=false;
+        // for(let i in this.state.ingredients){
+        //     disables=this.state.ingredients[i].count===0;
+        // }
         return (
             <Fragment>
                 <Burger
@@ -61,6 +68,8 @@ class BurgerBuilder extends Component {
                     count={this.counter}
                     add={this.addIngredients}
                     remove={this.removeIngredients}
+                    price={this.state.totalPrice}
+                    disables={this.disabled}
                 />
             </Fragment>
         );
