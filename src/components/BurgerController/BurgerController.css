@@ -1,7 +1,7 @@
 .menues{
     margin: 0 auto;
     text-align: center;
-    width: 330px;
+    width: 390px;
     border: 1px solid #bf3813;
     padding: 10px;
     box-sizing: border-box;
@@ -16,4 +16,8 @@ span{
 }
 button{
     margin: 0 5px;
+}
+img{
+    width: 20px;
+    height: 20px;
 }

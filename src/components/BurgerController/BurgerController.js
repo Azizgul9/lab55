@@ -6,6 +6,8 @@ const BurgerController = ({ingredients,count,add,remove,price,disables}) => {
     const menues = ingredients.map((ingredient, index) => (
             <div key={ingredient.name + index} >
                 <div style={{float:'left'}}>
+                    {console.log(ingredient.image)}
+                    <img src={ingredient.image} alt={ingredient.img}/>
                     <span>{ingredient.name}</span>
                 </div>
                 <div style={{float:'right'}}>

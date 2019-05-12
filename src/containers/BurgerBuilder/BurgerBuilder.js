@@ -1,13 +1,14 @@
 import React, {Component, Fragment} from 'react';
 import Burger from "../../components/Burger/Burger";
 
+
 import './BurgerBuilder.css';
 import BurgerController from "../../components/BurgerController/BurgerController";
 const INGREDIENTS=[
-    {name: 'Meat',price: 50,image: './images/meat.jpg'},
-    {name: 'Cheese',price: 20,image: './images/cheese.jpg'},
-    {name: 'Bacon',price: 30,image: './images/bacon.jpg'},
-    {name: 'Salad',price: 5,image: './images/salad.jpg'}
+    {name: 'Meat',price: 50,image: '../../images/meat.jpg'},
+    {name: 'Cheese',price: 20,image: '../../images/cheese.jpg'},
+    {name: 'Bacon',price: 30,image: '../../images/bacon.jpg'},
+    {name: 'Salad',price: 5,image: '../../images/salad.jpg'}
 ];
 
 class BurgerBuilder extends Component {
